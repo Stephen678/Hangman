@@ -2,8 +2,10 @@ import random
 words = ["chicken", "individual", "laptop", "office", "telephone"]
 
 def get_word():
-    wording = random.choice(words)
-    return wording.upper()
+    words = open("c:/Users/user/Documents/hangman/data/words.txt")
+    my_Word= words.read().upper()
+    wording = random.choice(my_Word.split())
+    return wording
     
 
 def display_word(wording):
@@ -57,7 +59,7 @@ def display_word(wording):
         print("Congrats, you guessed the word! You win!")
         print(guesses)  
     else:
-        print("Sorry,you ran out of tries. The word was" + wording + ". Maybe next time!")          
+        print("Sorry,you ran out of tries. The word was" +" " + wording + ". Maybe next time!")          
         
     
 def main():
